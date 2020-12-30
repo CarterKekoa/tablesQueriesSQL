@@ -3,13 +3,18 @@ Tables created from database schema provided in pdf. Queries used to grab specif
 
 Technical Work. Consider the following database schema, which is loosely based on the CIA World Factbook.1
 Country(country code, country name, gdp, inflation)
+
 – Countries consisting of their country codes (e.g., “US”), names (e.g., “United States of America”), gross domestic product per capita (e.g., 46,900 dollars per person), and inflation rates (e.g., 3.8 percent), where country code is the primary key
 Province(province name, country code, area)
+
 – Provinces (states in the US) consist of their names, their countries, and their ar- eas (in km2), where province name and country coode together form the primary key, and country code is a foreign key to Country.country code
 City(city name, province name, country code, population)
+
 – Cities consist of their names, provinces, countries, and population, where city name, province name, and country code together form the primary key, and province name and country code together are a foreign key to Province.(province name,country code)
 Border(country code 1, country code 2, border length)
+
 – Borders between countries with their border lengths (in km), where country code 1 and country code 2 together form the primary key, and country code 1 and coun- try code 2 are both foreign keys to Country.country code. Assume there is only one row in the table for a given border between two countries (i.e., the table does not store a symmetric closure over the border relation).
+
 Assume it is possible for: (i) two different cities in different provinces to have the same name; (ii) two different provinces in different countries to have the same name; and (iii) two countries with different country codes to have the same country name.
 1https://www.cia.gov/library/publications/the-world-factbook 1
       
